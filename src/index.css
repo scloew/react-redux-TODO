@@ -38,4 +38,8 @@ ul.header li {
   background-color: blue;
 }
 
+button.ui.button {
+  background-color: green;
+}
+
 
