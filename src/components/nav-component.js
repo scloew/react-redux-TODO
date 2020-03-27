@@ -4,7 +4,7 @@ import {
   NavLink,
   HashRouter
 } from 'react-router-dom';
-import TODOS from './todo';
+import TodoContainer from './todo-container';
 import Completed from './completed';
 import OverDue from './over-due';
 
@@ -21,7 +21,7 @@ export default class NavComponent extends Component {
             <li><NavLink to='/overdue'>OverDue</NavLink></li>
           </ul>
           <div className='content'>
-            <Route exact path='/' component={TODOS} />
+            <Route exact path='/' component={TodoContainer} />
             <Route path='/completed' component={Completed} />
             <Route path='/overdue' component={OverDue} />
           </div>

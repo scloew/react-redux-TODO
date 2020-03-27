@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: aqua;
+  background-color: whitesmoke;
 }
 
 code {
@@ -13,13 +13,29 @@ code {
     monospace;
 }
 
-li{
+h1 p{
+  color: blue;
+  font-size: medium;
+  display: inline-flex;
+  padding: 3px;
+}
+
+ul.header {
+  background-color:orange;
+  width: 20%;
+  margin-left: 37%;
+  margin-right: 30%;
+}
+
+ul.header li {
   display: inline;
-  padding: 10%;
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
 }
 
 .active {
-  background-color: yellow;
+  background-color: blue;
 }
 
 
