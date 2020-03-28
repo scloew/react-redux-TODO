@@ -6,9 +6,7 @@ function App() {
   //@todo the color bar behind links doesn't work on resive
   return (
     <div className="App">
-      <p>
-        Track your todos
-        </p>
+      <p>Track your todos</p>
       <NavComponent />
     </div>
   );

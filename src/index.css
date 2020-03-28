@@ -16,6 +16,7 @@ code {
 h1 p{
   color: blue;
   font-size: medium;
+  font-weight: bold;
   display: inline-flex;
   padding: 3px;
 }
@@ -35,11 +36,9 @@ ul.header li {
 }
 
 .active {
-  background-color: blue;
+  background-color: yellow;
 }
 
 button.ui.button {
   background-color: lightgreen;
 }
-
-
