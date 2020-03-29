@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { Modal, Form, Input, Radio, Button } from 'semantic-ui-react'
 
+import CalendarComponent from './Calendar';
+
 export default class AddTask extends Component {
 
   constructor(props) {
     super(props);
-    var today = new Date(),
-      todayStr = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     this.state = {
       open: true,
-      date: todayStr,
       checked: null
     }
 
@@ -21,6 +20,7 @@ export default class AddTask extends Component {
   }
 
   render() {
+    console.log(this.state.date)
     return (
       <div class='AddTask-Modal'>
         <Modal size='small' open={this.state.open} closeIcon
@@ -42,8 +42,9 @@ export default class AddTask extends Component {
                 <Form.Field
                   id='form-input-control-due-date'
                   control={Input}
-                  label='Due Date'
-                />
+                  label='Due Date'>
+                  <CalendarComponent />
+                </Form.Field>
                 <Form.Field>
                   <Radio
                     label='Easy'
@@ -68,7 +69,7 @@ export default class AddTask extends Component {
                   />
                 </Form.Field>
               </Form.Group>
-              <Button type='submit'>Submit</Button>
+              <Button type='submit' onClick={this.props.close}>Submit</Button>
             </Form>
           </Modal.Content>
         </Modal>

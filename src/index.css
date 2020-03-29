@@ -42,3 +42,11 @@ ul.header li {
 button.ui.button {
   background-color: lightgreen;
 }
+
+div.AddTask-Moda {
+  background-color: purple;
+}
+
+#ui-small-modal-transition-visible-active {
+  background-color: purple;
+}
