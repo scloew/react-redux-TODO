@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css';
 import NavComponent from './components/nav-component';
+import { connect } from 'react-redux'
+
+
 
 function App() {
   //@todo the color bar behind links doesn't work on resive

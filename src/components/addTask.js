@@ -19,6 +19,7 @@ export default class AddTask extends Component {
     this.setState({ value })
   }
 
+  //TODO link this to action; reducer
   render() {
     console.log(this.state.date)
     return (
