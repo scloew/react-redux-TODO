@@ -1,18 +1,29 @@
-import React from 'react';
 import './App.css';
 import NavComponent from './components/nav-component';
 import { connect } from 'react-redux'
 
-
-
-function App() {
-  //@todo the color bar behind links doesn't work on resive
-  return (
-    <div className="App">
-      <p>Track your todos</p>
-      <NavComponent />
-    </div>
-  );
+function mapStateToProps(state) {
+  return {
+    todo: state.todo,
+    completed: state.completed
+  };
 }
 
-export default App;
+var addAction = { type: 'addTodo' };
+var markCompleteAction = { type: 'markComplete' };
+var deleteTaskAction = { type: 'delete' };
+
+function mapDispatchToProps(dispatch) {
+  return {
+    addTask: (task) => { return dispatch(addAction, task) },
+    markTaskComplete: (task) => { return dispatch(markCompleteAction, task) },
+    deleteTask: (task) => { return dispatch(deleteTaskAction, task) }
+  };
+}
+
+var connectedComponent = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NavComponent);
+
+export default connectedComponent;

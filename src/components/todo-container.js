@@ -39,9 +39,9 @@ export default class TodoContainer extends Component {
           ) : null}
           <Button className="ui icon button" onClick={this.toggleModal}> <Icon name="plus"></Icon></Button>
           <Task text="this is a template todo" />
-          <h2>
+          <p>
             {this.props.todos /*list the todos from stor*/}
-          </h2>
+          </p>
         </h1>
       </div >
     )
