@@ -12,18 +12,25 @@ export default class AddTask extends Component {
       checked: null
     }
 
-    this.handleChange = this.handleChange.bind(this);
+    this.toggleRadioBtns = this.toggleRadioBtns.bind(this);
+    this.submitTask = this.submitTask.bind(this);
   }
 
-  handleChange(e, { value }) {
+  toggleRadioBtns(e, { value }) {
     this.setState({ value })
+  }
+
+  submitTask(e) {
+    this.props.close();
+    //this.props.AddTask(<task>); //todo fix this
+    console.log('modal closed')
   }
 
   //TODO link this to action; reducer
   render() {
     console.log(this.state.date)
     return (
-      <div class='AddTask-Modal'>
+      <div className='AddTask-Modal'>
         <Modal size='small' open={this.state.open} closeIcon
           onClose={this.props.close}>
           <Modal.Header>ADD NEW TODO</Modal.Header>
@@ -52,25 +59,25 @@ export default class AddTask extends Component {
                     name='radioGroup'
                     value='easy'
                     checked={this.state.value === 'easy'}
-                    onChange={this.handleChange}
+                    onChange={this.toggleRadioBtns}
                   />
                   <Radio
                     label='Medium'
                     name='radioGroup'
                     value='medium'
                     checked={this.state.value === 'medium'}
-                    onChange={this.handleChange}
+                    onChange={this.toggleRadioBtns}
                   />
                   <Radio
                     label='Hard'
                     name='radioGroup'
                     value='hard'
                     checked={this.state.value === 'hard'}
-                    onChange={this.handleChange}
+                    onChange={this.toggleRadioBtns}
                   />
                 </Form.Field>
               </Form.Group>
-              <Button type='submit' onClick={this.props.close}>Submit</Button>
+              <Button type='submit' onClick={this.submitTask}>Submit</Button>
             </Form>
           </Modal.Content>
         </Modal>

@@ -11,13 +11,13 @@ function mapStateToProps(state) {
 
 var addAction = { type: 'addTodo' };
 var markCompleteAction = { type: 'markComplete' };
-var deleteTaskAction = { type: 'delete' };
+var deleteTaskAction = { type: 'delete' }; // these should have task shouldn't they
 
 function mapDispatchToProps(dispatch) {
   return {
     addTask: (task) => { return dispatch(addAction, task) },
     markTaskComplete: (task) => { return dispatch(markCompleteAction, task) },
-    deleteTask: (task) => { return dispatch(deleteTaskAction, task) }
+    deleteTask: (task) => { return dispatch(deleteTaskAction, task) },
   };
 }
 
