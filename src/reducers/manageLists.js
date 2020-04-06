@@ -5,7 +5,10 @@
 //https://redux.js.org/style-guide/style-guide/
 
 //todo raname better
-export default function updateLists(state, action) {
+
+import { ADD, MARK_COMPLETE, DELETE } from '../constants/redux-constants'
+
+const updateLists = (state, action) => {
   if (state === undefined) {
     state = {
       todo: [],
@@ -13,12 +16,12 @@ export default function updateLists(state, action) {
       counter: 0
     }
   }
-  if (action.type === 'addTodo') {
+  if (action.type === ADD) {
     //add to state.todo
     let todos = state.todo;
     return todos.concat(action.Task);
   }
-  else if (action.type === 'markComplete') {
+  else if (action.type === MARK_COMPLETE) {
     //remove from todo and add to complete
     let done = this.state.completed;
     let todo = this.state.todo;
@@ -35,7 +38,7 @@ export default function updateLists(state, action) {
       })
     }
   }
-  else if (action.type === 'delete') {
+  else if (action.type === DELETE) {
     //delete the todo; removing from state.todo
     let todo = this.state.todo
     return {
@@ -50,3 +53,5 @@ export default function updateLists(state, action) {
   }
   return state;
 }
+
+export default updateLists;

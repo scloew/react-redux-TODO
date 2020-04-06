@@ -6,10 +6,13 @@ import * as serviceWorker from './serviceWorker';
 
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import updateLists from './components/reducer'
+import updateLists from './reducers/manageLists'
 
 //need to import the reducer I want to use
-var store = createStore(updateLists);
+var store = createStore(
+  updateLists,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
   <Provider store={store}>
